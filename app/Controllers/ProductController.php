@@ -6,8 +6,13 @@ use App\Controllers\BaseController;
 
 class ProductController extends BaseController
 {
-    public function index()
+    public function product($product)
     {
-        //
+        echo $product;
+    }
+
+    public function crizzz()
+    {
+        return view('products');
     }
 }

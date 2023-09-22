@@ -28,7 +28,7 @@
             <br>
             <input type="submit" value="save">
             </form>
-    <h1>PRODUCT LISTING</h1>
+    <h1>PRODUCT TABLE</h1>
     <table border=1>
         <tr>
         <th>Code</th>
@@ -51,5 +51,12 @@
             </tr>
         <?php endforeach; ?>
     </table>
+    <h1>UL PRODUCTS</h1>
+    <?php foreach ($product as $pr):?> 
+            <ul>
+                <li><?= $pr['ProductName'] ?></li>
+    </ul>
+        <?php endforeach; ?>
+        
 </body>
 </html>

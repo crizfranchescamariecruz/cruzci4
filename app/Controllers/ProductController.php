@@ -13,7 +13,6 @@ class ProductController extends BaseController
         $this->product = new \App\Models\ProductModel();
     }
 
-
     public function product($product)
     {
         echo $product;

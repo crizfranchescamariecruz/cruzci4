@@ -18,33 +18,9 @@ class CategoryController extends BaseController
         echo $category;
     }
 
-    public function delete($id)
+    public function crizz()
     {
-        $this->category->delete($id);
-        return redirect()->to('/product');
+        $data['category'] = $this->category->findAll();
+        return view('main', $data);
     }
-
-    public function edit($id)
-    {
-        $data = [
-            'category' => $this->category->findAll(),
-            'cate' => $this->category->where('id', $id)->first(),
-        ];
-        return view('products', $data);
-    }
-
-    public function save()
-    {
-        $id =$_POST['id'];
-        $data = [
-            'ProdCategory' => $this->request->getVar('ProdCategory'),
-        ];
-        if($id != null){
-            $this->category->set($data)->where('id', $id )->update();
-        }else{
-            $this->category->save($data);
-        }
-        return redirect()->to('/product');
-    }
-
 }

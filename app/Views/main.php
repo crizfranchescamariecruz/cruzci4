@@ -7,31 +7,46 @@
 </head>
 <body>
     <form action="/save" method="post">
-            <label>code</label>
-            <input type="hidden" name="id" >
-            <input type="text" name="code" placeholder="code" >
+    <label>UPC</label>
+            <input type="hidden" name="id">
+            <input type="text" name="code" placeholder="code">
             <br>
-            <label>name</label>
-            <input type="text" name="name" placeholder="name" >
+            <label>Name</label>
+            <input type="text" name="ProductName" placeholder="name" >
             <br>
-            <label>quantity</label>
-            <input type="text" name="quantity" placeholder="quantity" >
+            <label>Quantity</label>
+            <input type="text" name="ProductDescription" placeholder="description" >
+            <br>
+            <label>Category</label>
+            <input type="text" name="ProductCategory" placeholder="category" >
+            <br>
+            <label>Quantity</label>
+            <input type="text" name="ProductQuantity" placeholder="quantity" >
+            <br>
+            <label>Price</label>
+            <input type="text" name="ProductPrice" placeholder="price" >
             <br>
             <input type="submit" value="save">
             </form>
     <h1>PRODUCT LISTING</h1>
     <table border=1>
         <tr>
-            <th>code</th>
-            <th>name</th>
-            <th>quantity</th>
-            <th>action</th>
+        <th>Code</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
         </tr>
         <?php foreach ($product as $pr):?> 
             <tr>
-                <td><?= $pr['code'] ?></td>
-                <td><?= $pr['name'] ?></td>
-                <td><?= $pr['quantity'] ?></td>
+            <td><?= $pr['code'] ?></td>
+                <td><?= $pr['ProductName'] ?></td>
+                <td><?= $pr['ProductDescription'] ?></td>
+                <td><?= $pr['ProductCategory'] ?></td>
+                <td><?= $pr['ProductQuantity'] ?></td>
+                <td><?= $pr['ProductPrice'] ?></td>
                 <td><a href="/delete/<?= $pr['id'] ?>">delete</a> || <a href="/edit/<?= $pr['id'] ?>">edit</a></td>
             </tr>
         <?php endforeach; ?>

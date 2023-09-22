@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-//use App\Models\ProductModel;
+use App\Models\ProductModel;
 
 class ProductController extends BaseController
 {
@@ -12,6 +12,7 @@ class ProductController extends BaseController
     {
         $this->product = new \App\Models\ProductModel();
     }
+
 
     public function product($product)
     {
@@ -38,8 +39,11 @@ class ProductController extends BaseController
         $id =$_POST['id'];
         $data = [
             'code' => $this->request->getVar('code'),
-            'name' => $this->request->getVar('name'),
-            'quantity' => $this->request->getVar('quantity'),
+            'ProductName' => $this->request->getVar('ProductName'),
+            'ProductDescription' => $this->request->getVar('ProductDescription'),
+            'ProductCategory' => $this->request->getVar('ProductCategory'),
+            'ProductQuantity' => $this->request->getVar('ProductQuantity'),
+            'ProductPrice' => $this->request->getVar('ProductPrice'),
         ];
         if($id != null){
             $this->product->set($data)->where('id', $id )->update();
